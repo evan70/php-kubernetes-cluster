@@ -2,7 +2,7 @@
 
 PHP application with Kubernetes (Laravel, Nginx, SQLite). 
 
-Requirements: [kubectl](https://kubernetes.io/ru/docs/tasks/tools/install-kubectl/), [helm](https://helm.sh/ru/docs/intro/install/), [kind](https://kind.sigs.k8s.io/docs/user/quick-start/#installation).
+Requirements: [kubectl](https://kubernetes.io/ru/docs/tasks/tools/install-kubectl/), [helm](https://helm.sh/ru/docs/intro/install/), [kind](https://kind.sigs.k8s.io/docs/user/quick-start/#installation), docker-buildx
 
 ## Start
 
