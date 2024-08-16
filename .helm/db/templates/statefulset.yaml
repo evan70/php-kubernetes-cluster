@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: php-app
+spec:
+  serviceName: "php-app"
+  replicas: 1
+  selector:
+    matchLabels:
+      app: php-app
+  template:
+    metadata:
+      labels:
+        app: php-app
+    spec:
+      containers:
+        - name: php
+          image: php:8.2-fpm-alpine
+          ports:
+            - containerPort: 9000
+          volumeMounts:
+            - name: app-data
+              mountPath: /var/www/html
+          env:
+            - name: DB_CONNECTION
+              value: sqlite
+            - name: DB_DATABASE
+              value: /var/www/html/database/database.sqlite
+      volumes:
+        - name: app-data
+          persistentVolumeClaim:
+            claimName: app-data-pvc
